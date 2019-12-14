@@ -1,25 +1,46 @@
 {
-  "name": "bookmarks",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
-  },
+  "name": "bookmarks-app",
+  "version": "1.0.0",
+  "description": "_This project is a demonstration for Thinkful's React course_",
+  "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "CI=true react-scripts test --colors",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "now ./build",
+    "postdeploy": "now alias -A ./build/now.json"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^3.3.0"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thinkful-Ed/bookmarks-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thinkful-Ed/bookmarks-app/issues"
+  },
+  "homepage": "https://github.com/Thinkful-Ed/bookmarks-app#readme",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
